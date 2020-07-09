@@ -1,0 +1,71 @@
+{
+	//VsCode Settings Sync gist
+	"sync.gist": "ae39f8cacc8659d618a097d05e4a8d5f",
+
+	//Terminal
+	"terminal.explorerKind": "integrated",
+	"terminal.integrated.fontFamily": "MesloLGM NF, MesloLGLDZ Nerd Font",
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.integrated.shell.osx": "/usr/local/bin/fish",
+
+	//Workbench
+	"workbench.colorTheme": "Monokai Operator",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorCustomizations": {
+		"statusBar.background": "#66D9EF",
+		"statusBar.foreground": "#212121",
+		"statusBar.noFolderBackground": "#212121",
+		"statusBar.noFolderForeground": "#f3f3f3",
+		"statusBar.debuggingBackground": "#263238"
+	},
+
+	//Editor
+	"editor.fontFamily": "Cascadia Code, Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	},
+	"editor.suggestSelection": "first",
+	"editor.fontLigatures": true,
+
+	//Formatting 
+	"[javascript]": {
+		"editor.defaultFormatter": "remimarsal.prettier-now"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "remimarsal.prettier-now"
+	},
+	"javascript.preferences.quoteStyle": "single",
+	
+	"[typescript]": {
+		"editor.defaultFormatter": "remimarsal.prettier-now"
+	},
+	"typescript.preferences.quoteStyle": "single",
+	"tslint.autoFixOnSave": false,
+	"tslint.enable": false,
+	"tslint.alwaysShowRuleFailuresAsWarnings": true,
+
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 4,
+	"prettier.jsxSingleQuote": true,
+	"prettier.singleQuote": true,
+
+
+	"[csharp]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp"
+	},
+
+	//Language Specifics
+	"rust.mode": "legacy",
+	"rust.rustsymPath": "/Users/chrismursec/.cargo/bin/rustsym",
+	"rust.rustup": "/Users/chrismursec/.cargo/bin/rustup",
+	
+	//General
+	"explorer.openEditors.visible": 0,
+	"emmet.triggerExpansionOnTab": true,
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"atomKeymap.promptV3Features": true,
+
+}
