@@ -18,7 +18,8 @@
 		"statusBar.noFolderForeground": "#f3f3f3",
 		"statusBar.debuggingBackground": "#263238"
 	},
-
+	"workbench.editor.labelFormat": "short",
+	"breadcrumbs.enabled": true,
 	//Editor
 	"editor.fontFamily": "Cascadia Code, Operator Mono, Menlo, Monaco, 'Courier New', monospace",
 	"editor.multiCursorModifier": "ctrlCmd",
@@ -67,5 +68,6 @@
 	"emmet.triggerExpansionOnTab": true,
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"atomKeymap.promptV3Features": true,
+	"svg.preview.mode": "img",
 
 }
