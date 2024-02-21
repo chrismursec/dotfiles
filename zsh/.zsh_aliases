@@ -1,0 +1,10 @@
+alias vvv="cd $HOME/vvv-local && vagrant up"
+alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias vim=nvim
+alias tb="tabby serve --device metal --model TabbyML/StarCoder-1B"
+alias binday="node $HOME/Developer/github/binday/main.js"
+alias ls="exa -l --icons"
+alias lll="exa -la --icons"
+alias cat="bat"
+alias cd="z"
+alias mongod="mongod --dbpath $HOME/Developer/Database/mongo/data/db"
