@@ -1,14 +1,16 @@
 #!/bin/bash
 
+. $CONFIG_DIR/variables/colors.sh
+
 sketchybar \
-	--set $NAME apple_logo icon.font="SF Pro:Black:16.0" \
+	--set $NAME icon.font="SF Pro:Black:16.0" \
 	--set $NAME label.drawing=off \
 	--set $NAME padding_right=10 \
 	--set $NAME click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
 	--set $NAME popup.background.border_width=2 \
 	--set $NAME popup.background.corner_radius=3 \
-	--set $NAME popup.background.border_color=0xffffffff \
-	--set $NAME popup.background.color=0xff1f2122
+	--set $NAME popup.background.border_color=$SBC_AQUA \
+	--set $NAME popup.background.color=$SBC_DARK_GREY
 
 APPLE_FUNCTIONS=("Preferences" "Activity" "Lock Screen")
 for i in "${!APPLE_FUNCTIONS[@]}"; do

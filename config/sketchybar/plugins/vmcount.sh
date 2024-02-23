@@ -8,7 +8,7 @@ sketchybar --set $NAME label.drawing=off \
 	--set $NAME click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
 	--set $NAME popup.background.border_width=2 \
 	--set $NAME popup.background.corner_radius=3 \
-	--set $NAME popup.background.border_color=$SBC_WHITE \
+	--set $NAME popup.background.border_color=$SBC_AQUA \
 	--set $NAME popup.background.color=$SBC_DARK_GREY
 
 # Function to get the list of VMs

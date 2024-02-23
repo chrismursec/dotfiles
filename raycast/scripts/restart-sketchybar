@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Restart Sketchybar
+# @raycast.mode compact
+
+# Optional parameters:
+# @raycast.icon 🤖
+
+brew services restart sketchybar

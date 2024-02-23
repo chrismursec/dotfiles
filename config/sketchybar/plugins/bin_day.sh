@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $CONFIG_DIR/variables/colors.sh
+  . $CONFIG_DIR/variables/colors.sh
 
 # Run the Node.js script
 output=$(node --no-warnings ~/Developer/github/binday/main.js)

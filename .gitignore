@@ -1,2 +1,4 @@
 git/.gitconfig
 zsh/.zsh_aliases_private
+
+config/sketchybar/plugins/babyduck.sh
