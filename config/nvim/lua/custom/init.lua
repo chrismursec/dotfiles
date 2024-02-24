@@ -7,4 +7,6 @@
 -- })
 --
 vim.cmd('autocmd BufNewFile,BufRead sketchybarrc set filetype=sh')
+vim.cmd('autocmd BufNewFile,BufRead skhdrc set filetype=sh')
+
 

@@ -51,9 +51,9 @@ sketchybar --add item chevron left \
 	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
 	--subscribe front_app front_app_switched
 
-sketchybar --add item now_playing left \
-	--set now_playing script="$PLUGIN_DIR/now_playing.sh" \
-	--set now_playing update_freq=1
+#sketchybar --add item now_playing left \
+#	--set now_playing script="$PLUGIN_DIR/now_playing.sh" \
+#	--set now_playing update_freq=1
 
 ##### Adding Right Items #####
 
