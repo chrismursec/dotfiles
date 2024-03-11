@@ -14,6 +14,7 @@ arm() {
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
+
 export STARSHIP_CONFIG=~/dotfiles/starship/starship.toml
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

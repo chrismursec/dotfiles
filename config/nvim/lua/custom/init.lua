@@ -9,4 +9,8 @@
 vim.cmd('autocmd BufNewFile,BufRead sketchybarrc set filetype=sh')
 vim.cmd('autocmd BufNewFile,BufRead skhdrc set filetype=sh')
 
+local new_bg = {
+  black = "#1E2326"
+}
+
 

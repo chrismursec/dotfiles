@@ -150,4 +150,17 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 
+[custom.wordpress]
+description = "Shows WordPress logo and version number."
+detect_folders = ["wp-includes", "wp-admin", "wp-content"]
+when = """ pwd | grep -Eo "/wp-(admin|content|includes)" """
+symbol = " "
+command = """ WP_FOLDER=$(pwd | grep -Eo "wp-(admin|content|includes)"); WP_FOLDER=${WP_FOLDER:=.}; VER_FILE="${PWD%/$WP_FOLDER*}/wp-includes/version.php"; grep 'wp_version' $VER_FILE | awk -F "'" '{print $2}' """
+style = "bright-blue bold"
+#format = "[$symbol$output]($style) "
+format = '\[[$symbol($output)]($style)\]'
+
+
+
+
 

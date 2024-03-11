@@ -2,7 +2,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 . $CONFIG_DIR/variables/colors.sh
 
-sketchybar --bar position=top height=40 blur_radius=30 color=$SBC_DARK_GREY corner_radius=10 margin=30 y_offset=10
+sketchybar --bar position=top height=40 blur_radius=30 color=$SBC_DARK_GREY corner_radius=10 margin=20 y_offset=10
 
 ##### Changing Defaults #####
 default=(
