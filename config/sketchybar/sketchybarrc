@@ -2,7 +2,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 . $CONFIG_DIR/variables/colors.sh
 
-sketchybar --bar position=top height=40 blur_radius=30 color=$SBC_DARK_GREY corner_radius=10 margin=20 y_offset=10
+sketchybar --bar position=top height=40 blur_radius=30 color=$SBC_BACKGROUND corner_radius=10 margin=20 y_offset=10
 
 ##### Changing Defaults #####
 default=(
@@ -51,9 +51,9 @@ sketchybar --add item chevron left \
 	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
 	--subscribe front_app front_app_switched
 
-#sketchybar --add item now_playing left \
-#	--set now_playing script="$PLUGIN_DIR/now_playing.sh" \
-#	--set now_playing update_freq=1
+sketchybar --add item now_playing left \
+	--set now_playing script="$PLUGIN_DIR/now_playing.sh" \
+	--set now_playing update_freq=1
 
 ##### Adding Right Items #####
 

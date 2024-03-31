@@ -6,11 +6,11 @@ yabai -m config window_placement second_child
 
 # padding
 yabai -m config window_gap 20
-yabai -m config top_padding 25
+
 #yabai -m signal --add event=display_changed action="python3 ~/.config/yabai/scripts/set_padding.py"
 yabai -m config bottom_padding 15
-yabai -m config right_padding 20
-yabai -m config left_padding 20
+yabai -m config right_padding 25
+yabai -m config left_padding 25
 
 # mouse settings
 yabai -m config mouse_follows_focus on
@@ -21,5 +21,15 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
 
+
+# when a space is focused
+yabai -m signal --add event=space_changed action="~/dotfiles/config/yabai/scripts/set_display_padding.sh"
+# when a display is focused (if you frequently switch between displays)
+yabai -m signal --add event=display_changed action="~/dotfiles/config/yabai/scripts/set_display_padding.sh"
+
+
 # disable yabai for these apps
 #yabai -m rule --add app="^Discord$" manage=off
+
+# run borders service
+borders &

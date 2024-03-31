@@ -1,10 +1,11 @@
-# open terminal, blazingly fast compared to iTerm/Hyper
+# open terminal 
 cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2 --single-instance -d ~
 
 
 # Cycle Through Desktop Spaces
-shift + alt - right : yabai -m space --focus next
-shift + alt - left : yabai -m space --focus prev
+
+shift + ctrl - right : yabai -m space --focus next
+shift + ctrl - left : yabai -m space --focus prev
 
 # Navigation
 alt - h : yabai -m window --focus west
@@ -62,12 +63,4 @@ shift + alt - space : \
     yabai -m window --toggle float; \
     yabai -m window --toggle border
 
-# Restart Yabai
-shift + lctrl + alt - r : \
-    /usr/bin/env osascript <<< \
-        "display notification \"Restarting Yabai\" with title \"Yabai\""; \
-    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
-# Make window native fullscreen
-alt - f         : yabai -m window --toggle zoom-fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
