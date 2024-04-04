@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Everforest Dark Theme",
+  "version": "1.0",
+  "theme": {
+    "colors": {
+      "bookmark_text": [169, 183, 198],
+      "button_background": [0, 43, 54, 1],
+      "frame": [29, 32, 33],
+      "frame_inactive": [29, 32, 33],
+      "frame_incognito": [29, 32, 33],
+      "frame_incognito_inactive": [29, 32, 33],
+      "ntp_background": [44, 51, 57],
+      "ntp_text": [169, 183, 198],
+      "tab_background_text": [169, 183, 198],
+      "tab_text": [169, 183, 198],
+      "toolbar": [44, 51, 57]
+    }
+  }
+}
