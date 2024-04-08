@@ -1,0 +1,105 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13pt;
+  font-weight: bold;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+.warning, .critical, .urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+window#waybar {
+  background-color: transparent;
+}
+window > box {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: #272E33;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+#workspaces {
+  padding-left: 0px;
+  padding-right: 4px;
+}
+#workspaces button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: #D3C6AA;
+  border: none;
+}
+#workspaces button.focused {
+  background-color: #A7c080;
+  color: #272E33;
+}
+#workspaces button.urgent {
+  color: white;
+}
+#workspaces button:hover {
+  background-color: #7FBBB3; 
+  color: white;
+}
+tooltip {
+  background: #272E33; 
+}
+tooltip label {
+  color: #D3C6AA; 
+}
+#custom-launcher {
+  font-size: 25px;
+  padding-left: 8px;
+  padding-right: 6px;
+  color: #A7c080;
+}
+#mode, #clock, #memory, #cpu, #pulseaudio, #network,  #custom-powermenu, #custom-cava-internal {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#memory {
+  color: #7FBBB3;
+}
+#cpu {
+  color: #D699B6;
+}
+#clock {
+  color: #D3C6AA 
+}
+
+#pulseaudio {
+  color: #D3C6AA;
+}
+#network {
+  color: #A7C080;
+}
+
+#network.disconnected {
+  color: #E67E80; 
+}
+
+#custom-powermenu {
+  color: #E67E80; 
+}
+#tray {
+  padding-right: 8px;
+  padding-left: 10px;
+}
+
+#custom-spotify {
+  color: #D3C6AA;
+  margin-left: 2em;
+}
+
+#custom-weather {
+  color: #D3C6AA;
+  margin-right: 5px;
+}
+
