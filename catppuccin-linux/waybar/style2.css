@@ -1,0 +1,112 @@
+
+* {
+  font-family: "FiraCode Nerd Font";
+  font-size: 13pt;
+  font-weight: bold;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+.warning, .critical, .urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+window#waybar {
+  background-color: transparent;
+}
+window > box {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: #585b70;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+#workspaces {
+  padding-left: 0px;
+  padding-right: 4px;
+}
+#workspaces button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: #f5e0dc;
+  border: none;
+}
+#workspaces button.focused {
+  background-color: #f5c2e7;
+  color: #1e1e2e;
+}
+#workspaces button.urgent {
+  color: #1e1e2e;
+}
+#workspaces button:hover {
+  background-color: #89dceb; 
+  color: white;
+}
+tooltip {
+  background: #1e1e2e; 
+}
+tooltip label {
+  color: #f5e0dc; 
+}
+#custom-launcher {
+  font-size: 25px;
+  padding-left: 8px;
+  padding-right: 6px;
+  color: #f5c2e7;
+}
+#mode, #clock, #memory, #cpu, #pulseaudio, #network,  #custom-powermenu, #custom-cava-internal {
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+#custom-cava-internal {
+  color: #cba6f7
+}
+
+#memory {
+  color: #89dceb;
+}
+#cpu {
+  color: #f5c2e7;
+}
+#clock {
+  color: #cdd6f4 
+}
+
+#pulseaudio {
+  color: #cdd6f4;
+}
+#network {
+  color: #cba6f7;
+}
+
+#network.disconnected {
+  color: #f38ba8; 
+}
+
+#custom-powermenu {
+  color: #f38ba8; 
+}
+#tray {
+  padding-right: 8px;
+  padding-left: 10px;
+}
+
+#custom-spotify {
+  color: #cdd6f4;
+  font-weight: 500;
+  margin-left: 2em;
+}
+
+#custom-weather {
+  color: #f9e2af;
+  margin-right: 5px;
+}
+

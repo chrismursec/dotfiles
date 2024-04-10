@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Check if solaar is running
+if pgrep solaar >/dev/null; then
+    echo "Solaar is running. Killing it now..."
+    # Kill solaar
+    pkill solaar
+    # Wait a bit to ensure the process has been killed
+    sleep 2
+fi
+
+# Execute solaar with the desired options
+echo "Executing 'solaar -w hide'"
+solaar
+

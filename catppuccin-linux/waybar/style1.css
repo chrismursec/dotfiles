@@ -1,0 +1,63 @@
+G* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12pt;
+  border: none;
+  border-radius: 0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+window#waybar {
+  color: #D3C6AA;
+  background-color: #272E33;
+  border-bottom: 1px solid #272E33;
+  transition-duration: 0.5s;
+  transition-property: background-color;
+}
+#workspaces button {
+  background: #272E33;
+  color: #D3C6AA;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: none;
+}
+#workspaces button.focused {
+  color: #272E33;
+  background: #A7C080;
+}
+#workspaces button.urgent {
+  color: #f7768e;
+}
+#workspaces button.persistent {
+  color: #272E33;
+}
+#workspaces button:hover {
+  color: #272E33;
+  background: #7FBBB3;
+}
+#clock,
+#custom-cava-internal,
+#disk,
+#network,
+#pulseaudio,
+#cpu,
+#memory,
+#mode {
+  margin: 0px 2px;   /* gaps between modules */
+  padding: 0.2rem 0.6rem;
+  color: #D3C6AA;
+  background: #272E33;
+  border-bottom: 1px solid #272E33;
+}
+
+
+#custom-separator {
+  color: #859289;
+  background: #272E33;
+  border-bottom: 1px solid #272E33;
+}
+
+#custom-cava-internal{
+  font-family: "Hack Nerd Font" ;
+}
