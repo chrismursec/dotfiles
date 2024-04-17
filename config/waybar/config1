@@ -4,8 +4,8 @@
   "height": 30,
   "modules-left": [
     "sway/workspaces",
-    "custom/spotify",
-    "custom/cava-internal"
+    "custom/spotify"
+    // "custom/cava-internal"
 
   ],
   "modules-center": [
@@ -40,7 +40,7 @@
   },
   "clock": {
     "on-click": "~/.config/waybar/switch_style2.sh &",
-    "format": "<span foreground='#A7C080'>󰥔</span> {:%d %B %Y - %I:%M %p}",
+    "format": "<span foreground='#f5c2e7'>󰥔</span> {:%d %B %Y - %I:%M %p}",
     "interval": 60
   },
     "custom/spotify": {
@@ -57,29 +57,29 @@
   },
   "disk": {
     "interval": 18000,
-    "format": "<span foreground='#A7C080'>󰋊</span> {percentage_used}%",
+    "format": "<span foreground='#cba6f7'>󰋊</span> {percentage_used}%",
     "tooltip-format": "{used} used out of {total} on {path}"
   },
   "cpu": {
     "interval": 1,
-    "format": "<span foreground='#E69878'></span> {usage}%"
+    "format": "<span foreground='#94e2d5'></span> {usage}%"
   },
   "memory": {
     "interval": 300,
-    "format": "<span foreground='#7FBBB3'>󰍛</span> {percentage}%",
+    "format": "<span foreground='#b4befe'>󰍛</span> {percentage}%",
     "tooltip-format": "{used:0.2f}GiB used out of {total:0.2f}GiB"
   },
   "network": {
     "interval": 1,
-    "format-wifi": "<span foreground='#A7C080'></span> {essid} ({signalStrength}%)",
-    "format-ethernet": "<span foreground='#A7C080'></span> {ifname} ({ipaddr})",
-    "format-linked": "<span foreground='#A7C080'></span> {essid} (No IP)",
-    "format-disconnected": "<span foreground='#A7C080'></span> Disconnected",
+    "format-wifi": "<span foreground='#a6e3a1'> </span> {essid} ({signalStrength}%)",
+    "format-ethernet": "<span foreground='#a6e3a1'> </span> {ifname} ({ipaddr})",
+    "format-linked": "<span foreground='#a6e3a1'> </span> {essid} (No IP)",
+    "format-disconnected": "<span foreground='#a6e3a1'> </span> Disconnected",
     "tooltip": false
   },
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "<span foreground='#D3C6AA'>{icon}</span> {volume}%", 
+    "format": "<span foreground='#cdd6f4'>{icon} </span> {volume}%", 
     "format-muted": "󰖁 Muted",
     "format-icons": {
       "default": ["", "", ""]
