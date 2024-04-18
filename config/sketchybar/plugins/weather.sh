@@ -1,5 +1,9 @@
 #!/bin/bash
 
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+PRLCTL_DIR="/usr/local/bin"
+. $CONFIG_DIR/variables/colors.sh
+
 # Your location, use a city name, airport code, etc.
 LOCATION="stockport"
 
@@ -27,4 +31,4 @@ case $weather_icon in
 esac
 
 # Update the SketchyBar item
-sketchybar --set $NAME icon="$nf_icon" icon.font.size=14 label="${temperature}"
+sketchybar --set $NAME icon="$nf_icon" icon.font.size=14 icon.color="$SBC_BLUE" label="${temperature}"

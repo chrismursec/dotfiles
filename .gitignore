@@ -2,3 +2,9 @@ git/.gitconfig
 zsh/.zsh_aliases_private
 
 config/sketchybar/plugins/babyduck.sh
+
+
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store

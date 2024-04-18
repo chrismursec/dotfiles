@@ -9,7 +9,7 @@ default=(
 	padding_left=5
 	padding_right=5
 	icon.font="Hack Nerd Font:Bold:17.0"
-	label.font="Hack Nerd Font:Bold:14.0"
+	label.font="Cascadia Code PL:Regular:16.0"
 	icon.color=$SBC_WHITE
 	label.color=$SBC_WHITE
 	icon.padding_left=4
@@ -22,6 +22,7 @@ sketchybar --default "${default[@]}"
 ##### Apple Logo Menu #####
 sketchybar --add item apple_logo left \
 	--set apple_logo icon=􀣺 \
+	--set apple_logo icon.color=$SBC_WHITE \
 	--set apple_logo script="$PLUGIN_DIR/apple_logo.sh"
 
 ##### Adding Mission Control Space Indicators #####
@@ -51,24 +52,27 @@ sketchybar --add item chevron left \
 	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
 	--subscribe front_app front_app_switched
 
-sketchybar --add item now_playing left \
-	--set now_playing script="$PLUGIN_DIR/now_playing.sh" \
-	--set now_playing update_freq=1
+# sketchybar --add item now_playing left \
+# 	--set now_playing script="$PLUGIN_DIR/now_playing.sh" \
+# 	--set now_playing update_freq=1
 
 ##### Adding Right Items #####
 
+# sketchybar --add alias "Amphetamine,Amphetamine", right
+# sketchybar --set "Amphetamine,Amphetamine" alias.color="$SBC_GREEN"
+
 # Bin Day Icon
-if [ $(date +%A) = "Wednesday" ]; then
-	sketchybar --add item bin_day right \
-		--set bin_day script="$PLUGIN_DIR/bin_day.sh" \
-		--set bin_day update_freq=weekly \
-		--set bin_day
-fi
+# if [ $(date +%A) = "Wednesday" ]; then
+# 	sketchybar --add item bin_day right \
+# 		--set bin_day script="$PLUGIN_DIR/bin_day.sh" \
+# 		--set bin_day update_freq=weekly \
+# 		--set bin_day
+# fi
 
 # Defaults
 
 sketchybar --add item clock right \
-	--set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
+	--set clock update_freq=10 icon= icon.color="$SBC_GREEN" script="$PLUGIN_DIR/clock.sh" \
 	--add item volume right \
 	--set volume script="$PLUGIN_DIR/volume.sh" \
 	--subscribe volume volume_change \
@@ -76,17 +80,18 @@ sketchybar --add item clock right \
 	--set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
 	--subscribe battery system_woke power_source_change
 
-# VM List
-sketchybar --add item vmlist right \
-	--set vmlist script="$PLUGIN_DIR/vmcount.sh" \
-  --set vmlist update_freq=1000
-
 # Weather
 sketchybar --add item weather right \
 	--set weather script="$PLUGIN_DIR/weather.sh" \
 	--set weather update_freq=600
 
 # Add the babyduck item
+
+# VM List
+sketchybar --add item vmlist right \
+	--set vmlist script="$PLUGIN_DIR/vmcount.sh" \
+	--set vmlist update_freq=1000
+
 sketchybar --add item babyduck right \
 	--set babyduck script="$PLUGIN_DIR/babyduck.sh"
 

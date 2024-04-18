@@ -42,7 +42,7 @@ get_vm_list() {
 RUNNING_VMS=$($PRLCTL_DIR/prlctl list --all | grep running | wc -l | tr -d '[:space:]')
 
 # Update main item
-sketchybar --set $NAME icon="" label="$RUNNING_VMS"
+sketchybar --set $NAME icon="" icon.color="$SBC_AQUA" label="$RUNNING_VMS"
 
 # Get the list of VMs for the popup
 VM_LIST=$(get_vm_list)

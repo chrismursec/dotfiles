@@ -1,3 +1,4 @@
+# Everforest
 SBC_GREEN="0xffa7c080"
 SBC_BLUE="0xff7FBBB3"
 SBC_AQUA="0xff83C092"
@@ -5,12 +6,24 @@ SBC_YELLOW="0xffDBBC7F"
 SBC_ORANGE="0xffE69875"
 SBC_RED="0xffE67E80"
 SBC_BROWN="0xff4D4C43"
-SBC_WHITE="0xffffffff"
+SBC_WHITE="0xffd3c6aa"
 SBC_DARK_GREY="0xff1E2326"
 SBC_PURPLE="0xffD699B6"
 SBC_BACKGROUND="0xff2a3339"
 
-
+#catppuccin mocha
+# SBC_GREEN="0xffa6e3a1"
+# SBC_BLUE="0xff89b4fa"
+# SBC_AQUA="0xff89dceb"
+# SBC_YELLOW="0xfff9e2af"
+# SBC_ORANGE="0xfffab387"
+# SBC_RED="0xfff38ba8"
+# SBC_BROWN="0xff4D4C43"
+# SBC_WHITE="0xffcdd6f4"
+# SBC_DARK_GREY="0xff1E2326"
+# SBC_PURPLE="0xffD699B6"
+# SBC_BACKGROUND="0xff313244"
+# SBC_PINK="0xfff5c2e7"
 
 #SBC_GREEN="0xffa6e3a1"
 #SBC_BLUE="0xff89b4fa"
