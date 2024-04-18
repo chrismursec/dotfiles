@@ -1,0 +1,16 @@
+%YAML 1.3
+---
+- Device: CE4A746A
+- Key: [Mouse Gesture Button, pressed]
+- Execute: /home/chrs/dotfiles/config/sway/grim-slurp.sh
+...
+---
+- Device: CE4A746A
+- Test: [thumb_wheel_up, 0x1e]
+- Execute: [swaymsg, workspace, next]
+...
+---
+- Device: CE4A746A
+- Test: [thumb_wheel_down, 0x1e]
+- Execute: [swaymsg, workspace, prev]
+...

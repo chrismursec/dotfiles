@@ -1,0 +1,126 @@
+{
+  "modules-left": [
+    "custom/launcher",
+    "sway/workspaces",
+    "custom/spotify",
+    "custom/cava-internal",
+  ],
+  "modules-center": [
+    "clock",
+  ],
+  "modules-right": [
+    "custom/weather",
+    "pulseaudio",
+    "memory",
+    "cpu",
+    "battery",
+    "custom/separator",
+    "tray",
+    "custom/separator",
+
+    //"network",
+    "custom/powermenu"
+  ],
+  "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/launcher": {  
+    "format": "󰣇 ",
+    "on-click": "~/.config/wofi/wofi-run.sh",
+    "tooltip": false
+  },
+  "custom/cava-internal": {
+    "exec": "~/.config/waybar/Cava.sh",
+    "tooltip": false
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+  },
+    "custom/spotify": {
+    "format": "<span  foreground='#a6e3a1'>󰓇 </span><span>{}</span>",
+    "interval": 1,
+    "exec-if": "pgrep spotify",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify previous",
+    "on-scroll-down": "playerctl -p spotify next",
+    "tooltip": false,
+    "escape": true,
+    "max-length": 90,
+    "exec": "$HOME/bin/spotify.sh"
+  },
+  "custom/weather": {
+    "format": "<span>{}</span>",
+    "exec": "$HOME/.config/waybar/weather.sh"
+  },
+ "pulseaudio": {
+    "scroll-step": 1,
+    "format": "<span>{icon} </span> <span>{volume}%</span>", 
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "states": {
+      "warning": 85
+    },
+    "scroll-step": 1,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip": false,
+  },
+  "clock": {
+    "on-click": "~/.config/waybar/switch_style1.sh &",
+    "interval": 1,
+        "format": "<span foreground='#f5c2e7'>󰥔</span> {:%d %B %Y - %I:%M %p}",
+  },
+    "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "<span>{icon}</span> <span>{capacity}%</span>",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+    "format-full": "<span>󰁹</span> <span>{capacity}%</span>",
+    "format-charging": "󰂉 {capacity}%",
+    "tooltip": false
+  },
+  "memory": {
+    "interval": 1,
+    "format": "<span>󰍛</span> <span>{percentage}%</span>",
+    "states": {
+      "warning": 85
+    }
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "<span>󰻠</span> <span>{usage}%</span>"
+  },
+ "network": {
+    "interval": 1,
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {ifname} ({ipaddr})",
+    "format-linked": "說 {essid} (No IP)",
+    "format-disconnected": "說 Disconnected",
+    "tooltip": false
+  },
+  "temperature": {
+    "hwmon-path": "",
+    "tooltip": false,
+    "format": " {temperatureC}°C"
+  },
+  "custom/powermenu": {
+    "format": "󰐥",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 16,
+    "icon-limit": 5,
+    "spacing": 5,
+    "padding": 2,
+    "icon-padding": 2,
+    "scroll": false,
+    "tooltip": false
+  }
+}
