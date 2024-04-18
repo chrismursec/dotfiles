@@ -35,3 +35,15 @@ eval "$(fzf --zsh)"
 [ -f ~/.zsh_aliases_private ] && source ~/.zsh_aliases_private
 
 export PATH=$PATH:/Users/chrs/.spicetify
+
+
+path+=('/home/chrs/.cargo/bin/')
+export PATH
+
+
+
+
+
+
+
+
