@@ -8,8 +8,8 @@ sketchybar --set $NAME label.drawing=off \
 	--set $NAME click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
 	--set $NAME popup.background.border_width=2 \
 	--set $NAME popup.background.corner_radius=3 \
-	--set $NAME popup.background.border_color=$SBC_AQUA \
-	--set $NAME popup.background.color=$SBC_DARK_GREY
+	--set $NAME popup.background.border_color=$SBC_BORDERS \
+	--set $NAME popup.background.color=$SBC_POPUP_BACKGROUND
 
 # Function to get the list of VMs
 get_vm_list() {
@@ -42,7 +42,7 @@ get_vm_list() {
 RUNNING_VMS=$($PRLCTL_DIR/prlctl list --all | grep running | wc -l | tr -d '[:space:]')
 
 # Update main item
-sketchybar --set $NAME icon="" icon.color="$SBC_AQUA" label="$RUNNING_VMS"
+sketchybar --set $NAME icon="󰒌" icon.color="$SBC_AQUA" icon.font.size="18" label="$RUNNING_VMS"
 
 # Get the list of VMs for the popup
 VM_LIST=$(get_vm_list)

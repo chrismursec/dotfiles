@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Poimandres Dark Theme",
+  "description": "A dark theme based on the Poimandres color scheme.",
+  "theme": {
+    "colors": {
+      "frame": [32, 38, 51],
+      "frame_inactive": [49, 51, 64],
+      "toolbar": [28, 30, 40],
+      "tab_text": [93, 228, 199],
+      "tab_background_text": [93, 228, 199],
+      "bookmark_text": [93, 228, 199],
+      "ntp_background": [28, 30, 40],
+      "ntp_text": [93, 228, 199],
+      "button_background": [28, 30, 40],
+      "omnibox_background": [49, 51, 64],
+      "omnibox_text": [93, 228, 199],
+      "omnibox_selected_text": [28, 30, 40],
+      "omnibox_selection": [28, 30, 40]
+    }
+  }
+}

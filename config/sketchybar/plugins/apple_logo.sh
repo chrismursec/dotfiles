@@ -9,8 +9,8 @@ sketchybar \
 	--set $NAME click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
 	--set $NAME popup.background.border_width=2 \
 	--set $NAME popup.background.corner_radius=3 \
-	--set $NAME popup.background.border_color=$SBC_AQUA \
-	--set $NAME popup.background.color=$SBC_DARK_GREY
+	--set $NAME popup.background.border_color=$SBC_BORDERS \
+	--set $NAME popup.background.color=$SBC_POPUP_BACKGROUND
 
 APPLE_FUNCTIONS=("Preferences" "Activity" "Lock Screen")
 for i in "${!APPLE_FUNCTIONS[@]}"; do

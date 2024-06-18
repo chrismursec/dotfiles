@@ -1,6 +1,6 @@
 #!/bin/bash
 
-  . $CONFIG_DIR/variables/colors.sh
+. $CONFIG_DIR/variables/colors.sh
 
 # Run the Node.js script
 output=$(node --no-warnings ~/Developer/github/binday/main.js)
@@ -22,7 +22,8 @@ fi
 
 # Set the icon and color if a bin color was determined
 if [ -n "$COLOR" ]; then
-    sketchybar --set "$NAME" icon="" icon.color="$COLOR"
+    sketchybar --set "$NAME" icon="󰩹" icon.color="$COLOR"
 else
     sketchybar --set "$NAME" icon="" icon.color=""
+    sketchybar --set "$NAME" width=0
 fi

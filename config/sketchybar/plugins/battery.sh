@@ -11,31 +11,31 @@ fi
 
 case "${PERCENTAGE}" in
 9[0-9] | 100)
-  ICON=""
+  ICON="󰁹"
   COLOR="${SBC_GREEN}"
   ;;
 [6-8][0-9])
-  ICON=""
+  ICON="󰁿"
   COLOR="${SBC_YELLOW}"
   ;;
 [3-5][0-9])
-  ICON=""
+  ICON="󰁾"
   COLOR="${SBC_ORANGE}"
   ;;
 [1-2][0-9])
-  ICON=""
+  ICON="󰁼"
   COLOR="${SBC_RED}"
   ;;
 *)
-  ICON=""
+  ICON="󰁼"
   COLOR="${SBC_RED}"
   ;;
 esac
 
 if [[ "$CHARGING" != "" ]]; then
-  ICON=""
+  ICON="󰂄"
   COLOR="${SBC_BLUE}"
 fi
 
 # Update the SketchyBar item with the new icon, label, and color
-sketchybar --set "$NAME" icon="$ICON" icon.color="$COLOR" label="${PERCENTAGE}%"
+sketchybar --set "$NAME" icon="$ICON" icon.color="$COLOR" icon.font.size="18" label="${PERCENTAGE}%"

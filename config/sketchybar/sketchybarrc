@@ -1,32 +1,32 @@
 PLUGIN_DIR="$CONFIG_DIR/plugins"
+CLICK_DIR="$CONFIG_DIR/click-scripts"
 
 . $CONFIG_DIR/variables/colors.sh
 
-sketchybar --bar position=top height=40 blur_radius=30 color=$SBC_BACKGROUND corner_radius=10 margin=20 y_offset=10
-
+sketchybar --bar position=top height=40 blur_radius=30 color="" corner_radius=10 y_offset=10
 ##### Changing Defaults #####
 default=(
 	padding_left=5
 	padding_right=5
-	icon.font="Hack Nerd Font:Bold:17.0"
+	icon.font="MaterialIcons:Regular:17.0"
 	label.font="Cascadia Code PL:Regular:16.0"
-	icon.color=$SBC_WHITE
-	label.color=$SBC_WHITE
-	icon.padding_left=4
-	icon.padding_right=4
+	label.color=$SBC_TEXT
+	icon.padding_left=2
+	icon.padding_right=2
 	label.padding_left=4
 	label.padding_right=4
 )
 sketchybar --default "${default[@]}"
 
 ##### Apple Logo Menu #####
-sketchybar --add item apple_logo left \
-	--set apple_logo icon=􀣺 \
-	--set apple_logo icon.color=$SBC_WHITE \
-	--set apple_logo script="$PLUGIN_DIR/apple_logo.sh"
+sketchybar --add item apple_logo left
+sketchybar --set apple_logo icon=􀣺
+sketchybar --set apple_logo icon.padding_left=20
+sketchybar --set apple_logo icon.color=$SBC_PINK
+sketchybar --set apple_logo script="$PLUGIN_DIR/apple_logo.sh"
 
 ##### Adding Mission Control Space Indicators #####
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+SPACE_ICONS=("󰮯" "󰊠" "󰊠" "󰊠" "󰊠" "󰊠" "󰊠" "󰊠" "󰊠" "󰊠")
 for i in "${!SPACE_ICONS[@]}"; do
 	sid="$(($i + 1))"
 	space=(
@@ -34,9 +34,9 @@ for i in "${!SPACE_ICONS[@]}"; do
 		icon="${SPACE_ICONS[i]}"
 		icon.padding_left=7
 		icon.padding_right=7
-		background.color=$SBC_GREEN
-		background.corner_radius=5
-		background.height=25
+		icon.font.size="16"
+		background.corner_radius=100
+		background.height=30
 		label.drawing=off
 		script="$PLUGIN_DIR/space.sh"
 	)
@@ -46,54 +46,136 @@ done
 ##### Adding Left Items #####
 
 # Chevron and App name
-sketchybar --add item chevron left \
-	--set chevron icon= label.drawing=off \
-	--add item front_app left \
-	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-	--subscribe front_app front_app_switched
+sketchybar --add item chevron left
+sketchybar --set chevron icon=󰅂 icon.size=󰅂label.drawing=off icon.font.size="26"
 
-# sketchybar --add item now_playing left \
-# 	--set now_playing script="$PLUGIN_DIR/now_playing.sh" \
-# 	--set now_playing update_freq=1
+sketchybar --add item front_app left
+sketchybar --set front_app icon.drawing=off padding_right=20 script="$PLUGIN_DIR/front_app.sh"
+sketchybar --subscribe front_app front_app_switched
+
+sketchybar --add item empty_left left
+sketchybar --set empty_left width=10
+
+# Now Playing
+sketchybar --add item now_playing left
+sketchybar --set now_playing script="$PLUGIN_DIR/now_playing.sh"
+sketchybar --set now_playing update_freq=1
+sketchybar --set now_playing click_script="$CLICK_DIR/play-pause.sh"
 
 ##### Adding Right Items #####
 
-# sketchybar --add alias "Amphetamine,Amphetamine", right
-# sketchybar --set "Amphetamine,Amphetamine" alias.color="$SBC_GREEN"
+# Clock
+sketchybar --add item clock right
+sketchybar --set clock update_freq=10
+sketchybar --set clock padding_right=10
+sketchybar --set clock icon=󱑃
+sketchybar --set clock icon.color="$SBC_GREEN"
+sketchybar --set clock icon.font.size="18"
+sketchybar --set clock script="$PLUGIN_DIR/clock.sh"
 
-# Bin Day Icon
-# if [ $(date +%A) = "Wednesday" ]; then
-# 	sketchybar --add item bin_day right \
-# 		--set bin_day script="$PLUGIN_DIR/bin_day.sh" \
-# 		--set bin_day update_freq=weekly \
-# 		--set bin_day
-# fi
+# Volume
+sketchybar --add item volume right
+sketchybar --set volume script="$PLUGIN_DIR/volume.sh"
+sketchybar --subscribe volume volume_change
 
-# Defaults
-
-sketchybar --add item clock right \
-	--set clock update_freq=10 icon= icon.color="$SBC_GREEN" script="$PLUGIN_DIR/clock.sh" \
-	--add item volume right \
-	--set volume script="$PLUGIN_DIR/volume.sh" \
-	--subscribe volume volume_change \
-	--add item battery right \
-	--set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-	--subscribe battery system_woke power_source_change
+# Battery
+sketchybar --add item battery right
+sketchybar --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh"
+sketchybar --subscribe battery system_woke power_source_change
 
 # Weather
-sketchybar --add item weather right \
-	--set weather script="$PLUGIN_DIR/weather.sh" \
-	--set weather update_freq=600
+sketchybar --add item weather right
+sketchybar --set weather script="$PLUGIN_DIR/weather.sh"
+sketchybar --set weather update_freq=600
+sketchybar --set weather icon.padding_left=10
 
-# Add the babyduck item
+sketchybar --add item empty_right right
+sketchybar --set empty_right width=10
+
+# Bluetooth
+sketchybar --add item bluetooth right
+sketchybar --set bluetooth script="$PLUGIN_DIR/bluetooth.sh"
+sketchybar --set bluetooth update_freq=100
+sketchybar --set bluetooth padding_right=10
+sketchybar --set bluetooth icon.padding_left=1
+
+# Wifi
+sketchybar --add item wifi right
+sketchybar --set wifi script="$PLUGIN_DIR/wifi.sh"
+sketchybar --set wifi update_freq=1000
+sketchybar --set wifi padding_right=1
+sketchybar --set wifi icon.padding_left=1
 
 # VM List
-sketchybar --add item vmlist right \
-	--set vmlist script="$PLUGIN_DIR/vmcount.sh" \
-	--set vmlist update_freq=1000
+sketchybar --add item vmlist right
+sketchybar --set vmlist script="$PLUGIN_DIR/vmcount.sh"
+sketchybar --set vmlist update_freq=1000
+sketchybar --set vmlist padding_right=1
+sketchybar --set vmlist icon.padding_left=1
 
-sketchybar --add item babyduck right \
-	--set babyduck script="$PLUGIN_DIR/babyduck.sh"
+# Bin Day Icon
+sketchybar --add item bin_day right
+sketchybar --set bin_day script="$PLUGIN_DIR/bin_day.sh"
+sketchybar --set bin_day update_freq=1000
+sketchybar --set bin_day padding_right=1
+sketchybar --set bin_day icon.padding_left=1
+
+# Baby Duck
+sketchybar --add item babyduck right
+sketchybar --set babyduck script="$PLUGIN_DIR/babyduck.sh"
+sketchybar --set babyduck icon.padding_left=10
+sketchybar --set babyduck icon.padding_right=1
+
+sketchybar --add item empty_right2 right
+sketchybar --set empty_right2 width=10
+
+# CPU
+sketchybar --add item cpu right
+sketchybar --set cpu script="$PLUGIN_DIR/cpu.sh"
+sketchybar --set cpu update_freq=1
+sketchybar --set cpu padding_right=10
+
+# Memory
+sketchybar --add item memory right
+sketchybar --set memory script="$PLUGIN_DIR/memory.sh"
+sketchybar --set memory update_freq=1
+
+# Brackets
+sketchybar --add bracket left_spaces apple_logo '/space\..*/' chevron front_app
+sketchybar --set left_spaces background.color="$SBC_BACKGROUND"
+sketchybar --set left_spaces background.corner_radius=10
+sketchybar --set left_spaces background.height=40
+sketchybar --set left_spaces background.border_width=1
+sketchybar --set left_spaces background.border_color=$SBC_BORDERS
+
+sketchybar --add bracket left_spaces_extra now_playing
+sketchybar --set left_spaces_extra background.color="$SBC_BACKGROUND"
+sketchybar --set left_spaces_extra background.corner_radius=10
+sketchybar --set left_spaces_extra background.height=40
+sketchybar --set left_spaces_extra background.border_width=1
+sketchybar --set left_spaces_extra background.border_color=$SBC_BORDERS
+
+sketchybar --add bracket right_spaces weather battery volume clock
+sketchybar --set right_spaces background.color="$SBC_BACKGROUND"
+sketchybar --set right_spaces background.corner_radius=10
+sketchybar --set right_spaces background.height=40
+sketchybar --set right_spaces background.border_width=1
+sketchybar --set right_spaces background.border_color=$SBC_BORDERS
+
+sketchybar --add bracket right_spaces_extra bin_day babyduck vmlist bluetooth wifi
+sketchybar --set right_spaces_extra padding_right=20 background.color="$SBC_BACKGROUND"
+sketchybar --set right_spaces_extra background.corner_radius=10
+sketchybar --set right_spaces_extra background.height=40
+sketchybar --set right_spaces_extra background.border_width=1
+sketchybar --set right_spaces_extra background.border_color=$SBC_BORDERS
+
+sketchybar --add bracket right_spaces_extra2 cpu memory
+sketchybar --set right_spaces_extra2 padding_right=20 background.color="$SBC_BACKGROUND"
+sketchybar --set right_spaces_extra2 background.width=100
+sketchybar --set right_spaces_extra2 background.corner_radius=10
+sketchybar --set right_spaces_extra2 background.height=40
+sketchybar --set right_spaces_extra2 background.border_width=1
+sketchybar --set right_spaces_extra2 background.border_color=$SBC_BORDERS
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
